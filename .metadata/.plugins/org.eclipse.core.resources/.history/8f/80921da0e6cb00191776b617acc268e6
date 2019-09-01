@@ -1,0 +1,48 @@
+package com.app.dao.impl;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.app.dao.IStudentDao;
+import com.app.model.Student;
+
+@Repository
+public class StudentDaoImpl implements IStudentDao {
+
+	@Autowired
+	private HibernateTemplate ht;
+	
+	@Override
+	public int save(Student s) {
+		
+		return (Integer) ht.save(s);
+	}
+
+	@Override
+	public void update(Student s) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delect(int stuId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Integer getStudentById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> getAllStudent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

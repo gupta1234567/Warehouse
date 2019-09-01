@@ -1,0 +1,51 @@
+package com.app.congfig;
+
+import java.util.Properties;
+
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
+import org.springframework.core.env.Environment;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+
+@PropertySource("jdbc.properties")
+@Configuration
+public class AppConfig {
+
+	@Autowired
+	private Environment env;
+
+	@Bean
+	public BasicDataSource dsObj() {
+		BasicDataSource ds=new BasicDataSource();
+		ds.setDriverClassName(env.getProperty("dc"));
+		ds.setUrl(env.getProperty("url"));
+		ds.setUsername(env.getProperty("un"));
+		ds.setPassword(env.getProperty("pwd"));
+		ds.setInitialSize(5);
+		ds.setMaxTotal(5);
+		ds.setMaxIdle(5);
+		ds.setMinIdle(5);
+		return ds;
+	}
+	
+	@Bean
+	public LocalSessionFactoryBean sfObj() {
+	
+		LocalSessionFactoryBean sf=new LocalSessionFactoryBean();
+		sf.setDataSource(dsObj());
+		sf.setHibernateProperties(prps());
+		sf.setAnnotatedClasses();
+		
+	}
+
+	private Properties prps() {
+		return null;
+	}
+	
+
+}

@@ -1,0 +1,5 @@
+package com.app.congfig;
+
+public class AppConfig {
+
+}

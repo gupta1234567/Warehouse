@@ -1,0 +1,12 @@
+package com.app.dao;
+
+import com.app.model.Student;
+
+public interface IStudentDao {
+	public abstract int save(Student s);
+	public abstract void  update(Student s);
+	public abstract void  delect(int stuId);	
+	public abstract Integer getStudentById();
+	public abstract List<Student> getAllStudent();
+
+}

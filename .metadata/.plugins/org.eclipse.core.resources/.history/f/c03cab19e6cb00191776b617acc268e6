@@ -1,0 +1,40 @@
+package com.app.dao.impl;
+
+import java.util.List;
+
+import com.app.dao.IStudentDao;
+import com.app.model.Student;
+
+public class StudentDaoImpl implements IStudentDao {
+
+	@Override
+	public int save(Student s) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void update(Student s) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delect(int stuId) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public Integer getStudentById() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Student> getAllStudent() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

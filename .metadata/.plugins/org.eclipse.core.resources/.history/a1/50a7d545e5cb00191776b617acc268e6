@@ -1,0 +1,9 @@
+
+ 
+package com.app.dao;
+
+public interface IStudentDao {
+	public abstract int save(Student s);
+	
+
+}
